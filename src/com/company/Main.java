@@ -18,7 +18,7 @@ class Item{
     private String name;
     public void setName(String name)
     {
-        name = name.trim()
+        name = name.trim();
         char sim = name.charAt(0);
         int simCode = (int) sim;
         if ((simCode >= 65 && simCode <= 90) || (simCode >= 97 && simCode <= 122) )
@@ -292,7 +292,7 @@ class Computer
         System.out.print("Model: " + getModel() + ", ");
         System.out.print("CPU: " + getCpu() + ", ");
         System.out.print("OZY: " + getOzy() + ", ");
-        System.out.print("Storage: " + getOzy() + ", ");
+        System.out.print("Storage: " + getStorage() + ", ");
         System.out.println("Price: " + getPrice() + ", ");
     }
 }
