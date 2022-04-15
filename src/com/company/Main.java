@@ -60,14 +60,14 @@ class Item{
     {
         return price;
     }
-    private LocalDate dataProduction = LocalDate.of(1,1,1);
+    private LocalDate dataProduction;
     public void setDataProduction(int years, int month, int day)
     {
         if ((years > 1999 && years < 2023) && (month > 0 && month < 13) && (day > 0 && day < 32))
         {
             if (month == 2 && day > 28)
             {
-               day = 20;
+                day = 20;
             }
             this.dataProduction = LocalDate.of(years, month, day);
         }
@@ -93,7 +93,14 @@ class Item{
     private LocalDate dataLife;
     public void setDataLife()
     {
-        this.dataLife = dataProduction.plusDays((int) (Math.random() * 4 + 1));
+        try
+        {
+            this.dataLife = dataProduction.plusDays((int) (Math.random() * 4 + 1));
+        }
+        catch (Exception e)
+        {
+            System.out.println("Невозможно указать срок годности без даты изготовления!");
+        }
     }
     public LocalDate getDataLife()
     {
@@ -303,7 +310,6 @@ public class Main
         advanced();
         basic();
     }
-
     /**
      * Смотреть класс Item
      */
@@ -370,6 +376,7 @@ public class Main
             catch (Exception e)
             {
                 System.out.println("Произошла ошибка, проверьте данные: ");
+                System.exit(0);
             }
         }
 
