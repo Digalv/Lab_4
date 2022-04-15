@@ -100,6 +100,7 @@ class Item{
         catch (Exception e)
         {
             System.out.println("Невозможно указать срок годности без даты изготовления!");
+            System.exit(0);
         }
     }
     public LocalDate getDataLife()
@@ -308,7 +309,7 @@ public class Main
     public static void main(String[] args)
     {
         advanced();
-        basic();
+        //basic();
     }
     /**
      * Смотреть класс Item
