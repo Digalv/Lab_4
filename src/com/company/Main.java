@@ -309,7 +309,7 @@ public class Main
     public static void main(String[] args)
     {
         advanced();
-        //basic();
+        basic();
     }
     /**
      * Смотреть класс Item
